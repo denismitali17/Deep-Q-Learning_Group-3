@@ -1,0 +1,5 @@
+stable-baselines3[extra]==2.7.1
+gymnasium==1.0.0
+ale-py==0.10.1
+tensorboard==2.18.0
+opencv-python-headless==4.10.0.84

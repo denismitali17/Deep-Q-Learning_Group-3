@@ -1,0 +1,12 @@
+logs/
+CLAUDE.md
+__pycache__/
+*.pyc
+runs/
+checkpoints/
+.env
+.idea/
+best_model_*/
+venv/
+config_local.py
+assignment.txt
