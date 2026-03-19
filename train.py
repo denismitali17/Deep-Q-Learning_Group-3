@@ -101,8 +101,6 @@ def main():
             tensorboard_log="runs/",
             verbose=1,
             buffer_size=args.buffer_size,
-            optimize_memory_usage=True,
-            replay_buffer_kwargs={"handle_timeout_termination": False},
         )
 
         print(f"Training with experiment: {args.experiment_name}")
