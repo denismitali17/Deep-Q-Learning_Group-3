@@ -50,6 +50,7 @@ def parse_args():
     parser.add_argument("--total_timesteps", type=int, default=300000)
     parser.add_argument("--policy", type=str, default="CnnPolicy", choices=["CnnPolicy", "MlpPolicy"])
     parser.add_argument("--buffer_size", type=int, default=50000)
+    parser.add_argument("--resume", type=str, default=None, help="Path to checkpoint zip to resume training from")
     parser.add_argument("--experiment_name", type=str, default="default")
     parser.add_argument("--member_name", type=str, default="unnamed")
     return parser.parse_args()
@@ -89,24 +90,42 @@ def main():
 
         os.makedirs("runs", exist_ok=True)
 
-        model = DQN(
-            args.policy,
-            env,
-            learning_rate=args.lr,
-            gamma=args.gamma,
-            batch_size=args.batch_size,
-            exploration_fraction=args.exploration_fraction,
-            exploration_initial_eps=args.exploration_initial_eps,
-            exploration_final_eps=args.exploration_final_eps,
-            tensorboard_log="runs/",
-            verbose=1,
-            buffer_size=args.buffer_size,
-        )
+        if args.resume:
+            print(f"Resuming from checkpoint: {args.resume}")
+            model = DQN.load(
+                args.resume,
+                env=env,
+                learning_rate=args.lr,
+                gamma=args.gamma,
+                batch_size=args.batch_size,
+                exploration_fraction=args.exploration_fraction,
+                exploration_initial_eps=args.exploration_initial_eps,
+                exploration_final_eps=args.exploration_final_eps,
+                tensorboard_log="runs/",
+                verbose=1,
+                buffer_size=args.buffer_size,
+            )
+        else:
+            model = DQN(
+                args.policy,
+                env,
+                learning_rate=args.lr,
+                gamma=args.gamma,
+                batch_size=args.batch_size,
+                exploration_fraction=args.exploration_fraction,
+                exploration_initial_eps=args.exploration_initial_eps,
+                exploration_final_eps=args.exploration_final_eps,
+                tensorboard_log="runs/",
+                verbose=1,
+                buffer_size=args.buffer_size,
+            )
 
         print(f"Training with experiment: {args.experiment_name}")
         print(f"Member: {args.member_name}")
         print(f"Policy: {args.policy}")
         print(f"Total timesteps: {args.total_timesteps}")
+        if args.resume:
+            print(f"Resumed from: {args.resume}")
 
         model.learn(
             total_timesteps=args.total_timesteps,
