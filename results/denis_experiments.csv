@@ -1,0 +1,11 @@
+member_name,experiment_name,policy,lr,gamma,batch_size,exploration_initial_eps,exploration_final_eps,exploration_fraction,total_timesteps,mean_reward,std_reward
+Denis,Exp05_HighGamma,CnnPolicy,0.0001,0.999,32,1.0,0.05,0.1,1000000,-13.7,7.836453
+Denis,Exp06_LargeBatch,CnnPolicy,0.0001,0.99,64,1.0,0.05,0.1,1000000,-14.5,1.431782
+Denis,Exp09_SlowEps,CnnPolicy,0.0001,0.99,32,1.0,0.05,0.5,500000,-14.7,3.796051
+Denis,Exp03_LowLR,CnnPolicy,0.00001,0.99,32,1.0,0.05,0.1,500000,-20.0,1.0
+Denis,Exp08_FastEps,CnnPolicy,0.0001,0.99,32,1.0,0.05,0.05,500000,-20.8,0.4
+Denis,Exp01_Baseline,CnnPolicy,0.0001,0.99,32,1.0,0.05,0.1,1000000,-21.0,0.0
+Denis,Exp02_HighLR,CnnPolicy,0.0005,0.99,32,1.0,0.05,0.1,1000000,-21.0,0.0
+Denis,Exp04_LowGamma,CnnPolicy,0.0001,0.8,32,1.0,0.05,0.1,500000,-21.0,0.0
+Denis,Exp07_BestCombo,CnnPolicy,0.00025,0.99,64,1.0,0.01,0.1,2000000,-21.0,0.0
+Denis,Exp10_MLP,MlpPolicy,0.0001,0.99,32,1.0,0.05,0.1,500000,-21.0,0.0
