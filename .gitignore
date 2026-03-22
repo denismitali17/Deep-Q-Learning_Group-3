@@ -9,4 +9,5 @@ checkpoints/
 best_model_*/
 venv/
 config_local.py
+*.bat
 assignment.txt
