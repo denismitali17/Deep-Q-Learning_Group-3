@@ -39,16 +39,16 @@ python play.py --model_path dqn_model.zip --episodes 5
 
 | # | lr | gamma | batch | eps_start | eps_end | expl_fraction | policy | timesteps | mean_reward | noted_behavior |
 |---|------|-------|-------|-----------|---------|---------------|-----------|-----------|-------------|----------------|
-| 1 | 1e-4 | 0.99 | 32 | 1.0 | 0.05 | 0.10 | CnnPolicy | 1M | -21.0 | |
-| 2 | 5e-4 | 0.99 | 32 | 1.0 | 0.05 | 0.10 | CnnPolicy | 1M | -21.0 | |
-| 3 | 1e-5 | 0.99 | 32 | 1.0 | 0.05 | 0.10 | CnnPolicy | 500k | -20.0 | |
-| 4 | 1e-4 | 0.80 | 32 | 1.0 | 0.05 | 0.10 | CnnPolicy | 500k | -21.0 | |
-| 5 | 1e-4 | 0.999 | 32 | 1.0 | 0.05 | 0.10 | CnnPolicy | 1M | -13.7 | |
-| 6 | 1e-4 | 0.99 | 64 | 1.0 | 0.05 | 0.10 | CnnPolicy | 1M | -14.5 | |
-| 7 | 2.5e-4 | 0.99 | 64 | 1.0 | 0.01 | 0.10 | CnnPolicy | 2M | -21.0 | |
-| 8 | 1e-4 | 0.99 | 32 | 1.0 | 0.05 | 0.05 | CnnPolicy | 500k | -20.8 | |
-| 9 | 1e-4 | 0.99 | 32 | 1.0 | 0.05 | 0.50 | CnnPolicy | 500k | -14.7 | |
-| 10 | 1e-4 | 0.99 | 32 | 1.0 | 0.05 | 0.10 | MlpPolicy | 500k | -21.0 | |
+| 1 | 1e-4 | 0.99 | 32 | 1.0 | 0.05 | 0.10 | CnnPolicy | 1M | -21.0 | Baseline config, no improvement even at 1M steps with batch=32. |
+| 2 | 5e-4 | 0.99 | 32 | 1.0 | 0.05 | 0.10 | CnnPolicy | 1M | -21.0 | Higher lr did not help, same -21.0 result as baseline. |
+| 3 | 1e-5 | 0.99 | 32 | 1.0 | 0.05 | 0.10 | CnnPolicy | 500k | -20.0 | Very low lr, slight improvement to -20.0 but learning too slow to get far in 500k. |
+| 4 | 1e-4 | 0.80 | 32 | 1.0 | 0.05 | 0.10 | CnnPolicy | 500k | -21.0 | Low gamma meant the agent only cared about short term rewards, no learning. |
+| 5 | 1e-4 | 0.999 | 32 | 1.0 | 0.05 | 0.10 | CnnPolicy | 1M | -13.7 | Best result. High gamma helped the agent plan ahead during rallies. High std (7.8) shows inconsistent games though. |
+| 6 | 1e-4 | 0.99 | 64 | 1.0 | 0.05 | 0.10 | CnnPolicy | 1M | -14.5 | Larger batch helped, second best result. More stable than exp5 with lower std (1.4). |
+| 7 | 2.5e-4 | 0.99 | 64 | 1.0 | 0.01 | 0.10 | CnnPolicy | 2M | -21.0 | Even 2M steps didn't help. Slightly high lr with batch=64 failed to converge. |
+| 8 | 1e-4 | 0.99 | 32 | 1.0 | 0.05 | 0.05 | CnnPolicy | 500k | -20.8 | Fast exploration decay, agent stopped exploring at 25k steps. Barely any improvement. |
+| 9 | 1e-4 | 0.99 | 32 | 1.0 | 0.05 | 0.50 | CnnPolicy | 500k | -14.7 | Slow decay kept exploring for 250k steps. Third best result, exploration helped despite short training. |
+| 10 | 1e-4 | 0.99 | 32 | 1.0 | 0.05 | 0.10 | MlpPolicy | 500k | -21.0 | MLP cannot process pixel input, no learning at all. |
 
 ### Queen
 
