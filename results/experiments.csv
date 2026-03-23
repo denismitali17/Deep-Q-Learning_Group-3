@@ -1,3 +1,0 @@
-member_name,experiment_name,policy,lr,gamma,batch_size,exploration_fraction,exploration_initial_eps,exploration_final_eps,total_timesteps,mean_reward,std_reward,timestamp
-Dave,dave_exp1,CnnPolicy,0.0001,0.99,32,0.1,1.0,0.01,300000,-21.0,0.0,2026-03-19T00:18:00.014965
-test,buffer_test,CnnPolicy,0.0001,0.99,32,0.1,1.0,0.01,50000,-21.0,0.0,2026-03-19T00:39:51.556121
