@@ -1,0 +1,11 @@
+member_name,experiment_name,policy,lr,gamma,batch_size,exploration_fraction,exploration_initial_eps,exploration_final_eps,total_timesteps,mean_reward,std_reward,timestamp
+Niteka,Exp01_Baseline,CnnPolicy,0.0001,0.99,32,0.1,1.0,0.01,50000,-21.0,0.0,2026-03-22T22:01:55.921033
+Niteka,Exp02_LargeBatchLowLR,CnnPolicy,5e-05,0.99,54,0.15,1.0,0.02,50000,-21.0,0.0,2026-03-22T22:05:47.415938
+Niteka,Exp03_HighGammaHighLR,CnnPolicy,0.00015,0.995,32,0.1,1.0,0.01,50000,-21.0,0.0,2026-03-22T22:09:26.977295
+Niteka,Exp04_FastEpsDecay,CnnPolicy,0.0001,0.99,32,0.05,1.0,0.01,500000,-10.8,8.818163074019441,2026-03-22T22:49:29.777959
+Niteka,Exp05_HighLR,CnnPolicy,0.0002,0.99,32,0.12,1.0,0.01,50000,-21.0,0.0,2026-03-22T22:53:05.542082
+Niteka,Exp06_FasterEpsDecay,CnnPolicy,0.0001,0.99,32,0.2,1.0,0.02,50000,-20.8,0.39999999999999997,2026-03-22T22:56:39.298174
+Niteka,Exp07_LargeBatchHighLR,CnnPolicy,0.0003,0.99,64,0.18,1.0,0.02,50000,-21.0,0.0,2026-03-22T23:00:37.582561
+Niteka,Exp08_VeryHighGamma,CnnPolicy,0.0001,0.997,32,0.1,1.0,0.01,150000,-21.0,0.0,2026-03-22T23:10:18.916714
+Niteka,Exp09_SmallBatchLong,CnnPolicy,0.0001,0.99,16,0.12,1.0,0.01,700000,-21.0,0.0,2026-03-22T23:51:47.238839
+Niteka,Exp10_LongTraining,CnnPolicy,0.0001,0.99,32,0.1,1.0,0.01,500000,-21.0,0.0,2026-03-23T00:23:19.494160
