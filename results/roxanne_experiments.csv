@@ -1,0 +1,11 @@
+member_name,experiment_name,policy,lr,gamma,batch_size,exploration_fraction,exploration_initial_eps,exploration_final_eps,total_timesteps,mean_reward,std_reward,timestamp
+Roxanne,roxanne_exp1,CnnPolicy,0.0001,0.99,32,0.1,1.0,0.01,35000,-21.0,0.0,2026-03-22T21:43:07.166917
+Roxanne,roxanne_exp2,CnnPolicy,5e-05,0.95,64,0.15,1.0,0.05,35000,-21.0,0.0,2026-03-22T21:55:36.212917
+Roxanne,roxanne_exp3,CnnPolicy,0.0002,0.99,16,0.2,1.0,0.01,35000,-21.0,0.0,2026-03-22T22:05:56.670334
+Roxanne,roxanne_exp4,CnnPolicy,0.0001,0.999,32,0.05,1.0,0.001,35000,-21.0,0.0,2026-03-22T22:16:34.224551
+Roxanne,roxanne_exp5,CnnPolicy,0.0005,0.9,128,0.1,1.0,0.1,35000,-21.0,0.0,2026-03-22T22:29:03.181157
+Roxanne,roxanne_exp6,CnnPolicy,0.001,0.99,32,0.1,1.0,0.01,35000,-21.0,0.0,2026-03-22T22:40:09.460184
+Roxanne,roxanne_exp7,CnnPolicy,0.0001,0.95,64,0.3,1.0,0.05,35000,-21.0,0.0,2026-03-22T22:51:53.475266
+Roxanne,roxanne_exp8,CnnPolicy,5e-05,0.999,32,0.1,1.0,0.001,35000,-21.0,0.0,2026-03-22T23:02:27.950884
+Roxanne,roxanne_exp9,CnnPolicy,0.0002,0.9,64,0.2,1.0,0.01,35000,-21.0,0.0,2026-03-22T23:12:28.755063
+Roxanne,roxanne_exp10,CnnPolicy,0.0001,0.99,128,0.15,1.0,0.05,35000,-21.0,0.0,2026-03-22T23:26:22.141645
